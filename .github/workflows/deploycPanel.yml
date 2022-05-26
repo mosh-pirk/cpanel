@@ -17,9 +17,8 @@ jobs:
           node-version: 12.x
       - run: npm install
       - run: npm run build
-
-      - name: List output files
-        run: find build/ -print
+      - run: npm install -g serve
+      - run: serve -s build
 
       - uses: actions/checkout@v2.1.0
         with:

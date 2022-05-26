@@ -18,6 +18,9 @@ jobs:
       - run: npm install
       - run: npm run build --if-present
 
+      - name: List output files
+        run: find build/ -print
+
       - uses: actions/checkout@v2.1.0
         with:
           fetch-depth: 2

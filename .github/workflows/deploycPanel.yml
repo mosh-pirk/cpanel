@@ -8,9 +8,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -18,13 +20,13 @@ jobs:
       - run: npm install
       - run: npm run build --if-present
 
-      - uses: actions/checkout@v2.1.0
-        with:
-          fetch-depth: 2
+      - name: List output files
+        run: find build/ -print
+
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          SOURCE_DIR: 'build'
+          local-dir: build/

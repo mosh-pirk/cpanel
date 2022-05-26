@@ -25,8 +25,8 @@ jobs:
       - name: List output files
         run: ls
 
-      - name: List dist files
-        run: cd dist && ls
+      - name: List build files
+        run: cd build && ls
 
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@3.0.0
@@ -35,4 +35,4 @@ jobs:
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
           git-ftp-args: --insecure --remote-root home/joren/yc-bank-frontend --all
-          local-dir: dist
+          local-dir: ./

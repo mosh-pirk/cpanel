@@ -5,10 +5,6 @@ on:
     branches:
       - master
 
-defaults:
-  run:
-    working-directory: web
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -31,4 +27,4 @@ jobs:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          path: "web/build/**"
+          local-dir: ./build/

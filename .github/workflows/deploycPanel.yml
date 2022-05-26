@@ -29,10 +29,17 @@ jobs:
         run: cd build && ls
 
       - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
           git-ftp-args: --dry-run
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.idea
+            **/src
+            **/*.json

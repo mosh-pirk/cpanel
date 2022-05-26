@@ -1,8 +1,10 @@
-on: push
-  branches:
-    - master
+name: Production workflow
 
-name: 🚀 Deploy website on push
+on:
+  push:
+    branches:
+      - master
+
 jobs:
   web-deploy:
     name: 🎉 Deploy

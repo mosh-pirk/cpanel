@@ -2,8 +2,10 @@ name: Production workflow
 
 on:
   push:
-    branches:
-      - master
+    push:
+      branches: [ master ]
+    pull_request:
+      branches: [ master ]
 
 jobs:
   deploy:
@@ -15,8 +17,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - run: npm install
-      - run: npm run build --if-present
+
+      - name: Run react build script
+        run: yarn && yarn build
+        env:
+          CI: false
 
       - name: List output files
         run: |

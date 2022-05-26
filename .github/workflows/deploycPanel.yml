@@ -19,7 +19,9 @@ jobs:
       - run: npm run build --if-present
 
       - name: List output files
-        run: find build/ -print
+        run: |
+          find build/ -print
+          pwd build/
 
       - uses: actions/checkout@v2.1.0
         with:

@@ -1,26 +1,19 @@
-# This is a deployment file for depoying React App to cPanel.
-
-name: Publish React Website to cPanel
-
+name: Publish Website to CPanel
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches:
-      -master
-
+      - master
 jobs:
-  build:
+  FTP-Deploy-Action:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.1.0
         with:
-          fetch-depth: 1
-
+          fetch-depth: 2
       - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
-          ftp-server: ${{secrets.FTP_SERVER}}
-          ftp-username: ${{secrets.FTP_USERNAME}}
-          ftp-password: ${{secrets.FTP_PASSWORD}}
-        
+          ftp-server: ${{ secrets.FTP_SERVER }}
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}

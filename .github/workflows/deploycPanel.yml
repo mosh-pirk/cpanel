@@ -17,11 +17,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-
-      - name: Run react build script
-        run: yarn && yarn build
-        env:
-          CI: false
+      - run: npm install
+      - run: npm run build --if-present
 
       - name: List output files
         run: |
@@ -37,4 +34,4 @@ jobs:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build/
+          local-dir: ./build/

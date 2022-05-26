@@ -32,4 +32,4 @@ jobs:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: /home/runner/work/cpanel/cpanel/build/
+          path: /home/runner/work/cpanel/cpanel/build/

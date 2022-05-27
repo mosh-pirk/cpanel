@@ -44,4 +44,4 @@ jobs:
             **/src/**
             **/public/**
             **/*.json
-            **/build*
+            **/build/.

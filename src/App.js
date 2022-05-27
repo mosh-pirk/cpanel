@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Mohamid Shaker 2
+          Mohamid Shaker:n websivu toimii
         </p>
       </header>
     </div>

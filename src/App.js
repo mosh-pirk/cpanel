@@ -7,8 +7,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Mohamid Shaker:n websivu toimii
+          Mohamid Shaker
         </p>
+          <p>
+              Tulossa
+          </p>
       </header>
     </div>
   );

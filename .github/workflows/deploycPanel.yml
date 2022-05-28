@@ -34,14 +34,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
+          local-dir: ./build/
           git-ftp-args: --dry-run
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.idea/**
-            **/src/**
-            **/public/**
-            **/*.json
-            **/build

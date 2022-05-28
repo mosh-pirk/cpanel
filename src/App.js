@@ -10,7 +10,7 @@ function App() {
           Mohamid Shaker node version 12.22.2
         </p>
           <p>
-              Tulossa
+              Tulossa 30.6.2022
           </p>
       </header>
     </div>

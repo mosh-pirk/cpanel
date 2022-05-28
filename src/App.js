@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Mohamid Shaker 2
+          Mohamid Shaker node version 12.22.2
         </p>
       </header>
     </div>
